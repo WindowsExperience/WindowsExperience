@@ -1,6 +1,14 @@
+/*
+    Variables
+*/
+
 :root {
     --design-unit: 4.3 !important;
 }
+
+/*
+    Typography
+*/
 
 @font-face {
     font-family: 'Segoe UI Regular';
@@ -33,6 +41,10 @@
     src: local('Segoe UI Bold Italic'), url('../font/Segoe UI Bold Italic.woff') format('woff');
 }
 
+/*
+    Global
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -49,6 +61,10 @@ body {
     height: 100vh;
     font-family: 'Segoe UI Regular', sans-serif;
 }
+
+/*
+    Lockscreen
+*/
 
 .lockscreen {
     display: flex;
@@ -74,6 +90,10 @@ body {
     width: 100%;
 }
 
+/*
+    Desktop
+*/
+
 .selection {
     position: absolute;
     border: 1px solid #3498db;
@@ -81,6 +101,10 @@ body {
     display: none;
     pointer-events: none;
 }
+
+/*
+    Taskbar
+*/
 
 .start {
     position: fixed;
@@ -456,6 +480,10 @@ body {
         opacity: 1;
     }
 }
+
+/*
+    Notifications
+*/
 
 .toast {
     position: fixed;
