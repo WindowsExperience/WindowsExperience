@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Experience</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./assets/js/web-components.min.js"></script>
+</head>
+
+<body>
+    <div class="lockscreen">
+        <div>
+            <fluent-progress-ring></fluent-progress-ring>
+            <p>Setting up session</p>
+        </div>
+    </div>
+    <div class="toast">
+        <div class="app">
+            <img src="./assets/img/icons/Explorer.png" draggable="false">
+            <p>File Explorer</p>
+        </div>
+        <div class="content">
+            <h1>Toast title</h1>
+            <p>Toast body</p>
+        </div>
+    </div>
+    <div class="selection"></div>
+    <fluent-menu id="taskbar-menu" role="menu">
+        <fluent-menu-item id="tm-item" role="menuitem" class="indent-0" tabindex="0">Task Manager</fluent-menu-item>
+        <fluent-divider role="separator" aria-orientation="horizontal" orientation="horizontal"></fluent-divider>
+        <fluent-menu-item id="ts-item" role="menuitem" class="indent-0" tabindex="0">Taskbar Settings</fluent-menu-item>
+    </fluent-menu>
+    <div class="start">
+        <div class="content">
+            <input type="text" class="search" id="start-search" autocomplete="off" spellcheck="off"
+                placeholder="Search for apps, settings, and documents">
+            <div class="pinned">
+                <h1>Pinned</h1>
+                <div class="items">
+                <div class="icon">
+                    <img src="./assets/img/icons/Edge.png" draggable="false">
+                    <p>Edge</p>
+                </div>
+                <div class="icon">
+                    <img src="./assets/img/icons/Settings.png" draggable="false">
+                    <p>Settings</p>
+                </div>
+            </div>
+            </div>
+            <div class="recommended">
+                <h1>Recommended</h1>
+                <p>The more you use your device, the more we'll show your recent files and new apps here.</p>
+            </div>
+        </div>
+        <div class="toolbar">
+            <div class="user">
+                <img src="./assets/img/icons/User.png" draggable="false">
+                <p>WDAGUtilityAccount</p>
+            </div>
+            <div class="power">
+                <img src="./assets/img/icons/PowerButton.png" draggable="false">
+            </div>
+        </div>
+    </div>
+    <div class="widgets-pane">
+        <div class="grid">
+            <div class="widget" style="height: 20%">
+                <fluent-skeleton style="height: 20px; width: 60%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 10%">
+                <fluent-skeleton style="height: 20px; width: 35%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 30%">
+                <fluent-skeleton style="height: 20px; width: 40%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 25%">
+                <fluent-skeleton style="height: 20px; width: 65%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 15%">
+                <fluent-skeleton style="height: 20px; width: 25%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="widget" style="height: 10%">
+                <fluent-skeleton style="height: 20px; width: 30%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 30%">
+                <fluent-skeleton style="height: 20px; width: 60%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 20%">
+                <fluent-skeleton style="height: 20px; width: 70%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 30%">
+                <fluent-skeleton style="height: 20px; width: 35%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+            <div class="widget" style="height: 10%">
+                <fluent-skeleton style="height: 20px; width: 50%" shape="rect" shimmer="true"></fluent-skeleton>
+            </div>
+        </div>
+    </div>
+    <div class="taskbar">
+        <div class="widgets">
+            <div class="icon" id="widgets-button">
+                <img src="./assets/img/icons/Widgets.png" draggable="false">
+            </div>
+        </div>
+        <div class="icon" id="start-button">
+            <img src="./assets/img/icons/Start.png" draggable="false">
+        </div>
+        <div class="icon">
+            <img src="./assets/img/icons/Search.png" draggable="false">
+        </div>
+        <div class="icon">
+            <img src="./assets/img/icons/TaskView.png" draggable="false">
+        </div>
+        <div class="icon">
+            <img src="./assets/img/icons/Chat.png" draggable="false">
+        </div>
+        <div class="icon">
+            <img src="./assets/img/icons/Explorer.png" draggable="false">
+        </div>
+        <div class="icon">
+            <img src="./assets/img/icons/Store.png" draggable="false">
+        </div>
+        <div class="icon">
+            <img src="./assets/img/icons/Edge.png" draggable="false">
+        </div>
+        <div class="controls">
+            <div class="control-item" id="tray">
+                <img src="./assets/img/icons/ArrowUp.png" draggable="false">
+            </div>
+            <div class="control-item" id="panel">
+                <img src="./assets/img/icons/WifiEthernet.png" id="ethernet" draggable="false">
+                <img src="./assets/img/icons/Volume3.png" id="volume" draggable="false">
+            </div>
+            <div class="control-item" id="calendar">
+                <div class="text-container">
+                    <p class="top-text" id="time">1:00 AM</p>
+                    <p class="bottom-text" id="date">01/01/2024</p>
+                </div>
+                <img src="./assets/img/icons/Ringer.png" draggable="false">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./assets/js/script.js"></script>
+
+</html>
