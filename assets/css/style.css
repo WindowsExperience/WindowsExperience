@@ -609,12 +609,17 @@ body {
 */
 
 .settings-app {
-    display: flex;
+    display: none;
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(24px);
     z-index: 105;
     position: relative;
+}
+
+.settings-app.show {
+    display: flex;
+    animation: scale 0.1s ease-in-out forwards;
 }
 
 .settings-app .titlebar {
