@@ -137,11 +137,8 @@ document.addEventListener('mousemove', (e) => {
   if (isDragging) {
     const x = e.clientX - offsetX;
         const y = e.clientY - offsetY;
-
-        // Check boundaries to prevent dragging outside the page
         const maxX = window.innerWidth - activeElement.offsetWidth;
         const maxY = window.innerHeight - activeElement.offsetHeight;
-
         activeElement.style.left = `${Math.max(0, Math.min(x, maxX))}px`;
         activeElement.style.top = `${Math.max(0, Math.min(y, maxY))}px`;
   }
