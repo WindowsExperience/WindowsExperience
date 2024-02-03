@@ -155,6 +155,7 @@ body {
     width: 642px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
+    z-index: 10000;
 }
 
 .start.show {
