@@ -673,6 +673,10 @@ body {
     transition: all 0.1s ease-in-out;
 }
 
+.settings-app .titlebar .controls .item i {
+    transition: all 0.08s ease-in-out;
+}
+
 .settings-app .titlebar .controls .item:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
