@@ -155,7 +155,7 @@ body {
     width: 642px;
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
-    z-index: 10000;
+    z-index: 115;
 }
 
 .start.show {
@@ -386,7 +386,7 @@ body {
     position: absolute;
     bottom: 0;
     display: flex;
-    z-index: 110;
+    z-index: 120;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
