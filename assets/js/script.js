@@ -1,5 +1,10 @@
+//
+//  Variables
+//
 let isSelecting = false;
+let isDragging = false;
 let startX, startY, endX, endY;
+let offsetX, offsetY, activeElement;
 const selectionRectangle = document.querySelector(".selection");
 const time = document.getElementById('time');
 const date = document.getElementById('date');
@@ -11,6 +16,10 @@ const startMenu = document.querySelector('.start');
 const startSearch = document.getElementById('start-search');
 const widgetsButton = document.getElementById('widgets-button');
 const widgetsPane = document.querySelector('.widgets-pane');
+const windowElement = document.querySelectorAll('.window');
+//
+//  Taskbar
+//
 startButton.addEventListener('click', () => {
     startMenu.classList.toggle('show');
     startButton.classList.toggle('active');
@@ -64,7 +73,15 @@ document.addEventListener('DOMContentLoaded', () => {
 taskbarMenu.addEventListener("click", () => {
     taskbarMenu.style.display = 'none';
 });
+//
+//  Desktop
+//
 document.addEventListener('mousedown', (event) => {
+    const targetElement = event.target;
+    if (!targetElement || event.button !== 0) return;
+    const isWindow = targetElement.classList.contains('window') || targetElement.closest('.window');
+    const isTaskbar = targetElement.classList.contains('taskbar') || targetElement.closest('.taskbar');
+    if (isWindow || isTaskbar) return;
     if (event.button === 0) {
         isSelecting = true;
         startX = event.clientX;
@@ -96,8 +113,40 @@ document.addEventListener('mouseup', () => {
 });
 updateDateTime();
 setInterval(updateDateTime, 1000);
+//
+// Lockscreen
+//
 window.addEventListener('load', function () {
     var lockscreen = document.querySelector('.lockscreen');
     lockscreen.style.display = 'none';
     lockscreen.remove();
+});
+//
+// Window management
+//
+windowElement.forEach(element => {
+  const titlebar = element.querySelector('.titlebar');
+  titlebar.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    offsetX = e.clientX - element.getBoundingClientRect().left;
+    offsetY = e.clientY - element.getBoundingClientRect().top;
+    activeElement = element;
+  });
+});
+document.addEventListener('mousemove', (e) => {
+  if (isDragging) {
+    const x = e.clientX - offsetX;
+        const y = e.clientY - offsetY;
+
+        // Check boundaries to prevent dragging outside the page
+        const maxX = window.innerWidth - activeElement.offsetWidth;
+        const maxY = window.innerHeight - activeElement.offsetHeight;
+
+        activeElement.style.left = `${Math.max(0, Math.min(x, maxX))}px`;
+        activeElement.style.top = `${Math.max(0, Math.min(y, maxY))}px`;
+  }
+});
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  activeElement = null;
 });

@@ -8,6 +8,7 @@
     <title>Windows Experience</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/fabric.min.css">
     <script type="module" src="./assets/js/web-components.min.js"></script>
 </head>
 
@@ -16,7 +17,8 @@
         <div>
             <img src="./assets/img/logo.png" draggable="false">
             <p>Your device is unsupported</p>
-            <fluent-button appearance="accent" onclick="document.querySelector('.overlay').remove()">Proceed anyway</fluent-button>
+            <fluent-button appearance="accent" onclick="document.querySelector('.overlay').remove()">Proceed
+                anyway</fluent-button>
         </div>
     </div>
     <div class="lockscreen">
@@ -36,6 +38,33 @@
         </div>
     </div>
     <div class="selection"></div>
+    <div class="window settings-app">
+        <div class="titlebar">
+            <div class="icon unused">
+                <i class="ms-Icon ms-Icon--Back" aria-hidden="true"></i>
+            </div>
+            <p>Settings</p>
+            <div class="controls">
+                <div class="item">
+                    <i class="ms-Icon ms-Icon--ChromeMinimize" aria-hidden="true"></i>
+                </div>
+                <div class="item">
+                    <i class="ms-Icon ms-Icon--Checkbox" aria-hidden="true"></i>
+                </div>
+                <div class="item danger">
+                    <i class="ms-Icon ms-Icon--ChromeClose" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+        <div class="body">
+            <div class="sidebar">
+
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+    </div>
     <fluent-menu id="taskbar-menu" role="menu">
         <fluent-menu-item id="tm-item" role="menuitem" class="indent-0" tabindex="0">Task Manager</fluent-menu-item>
         <fluent-divider role="separator" aria-orientation="horizontal" orientation="horizontal"></fluent-divider>
@@ -48,15 +77,15 @@
             <div class="pinned">
                 <h1>Pinned</h1>
                 <div class="items">
-                <div class="icon">
-                    <img src="./assets/img/icons/Edge.png" draggable="false">
-                    <p>Edge</p>
+                    <div class="icon">
+                        <img src="./assets/img/icons/Edge.png" draggable="false">
+                        <p>Edge</p>
+                    </div>
+                    <div class="icon">
+                        <img src="./assets/img/icons/Settings.png" draggable="false">
+                        <p>Settings</p>
+                    </div>
                 </div>
-                <div class="icon">
-                    <img src="./assets/img/icons/Settings.png" draggable="false">
-                    <p>Settings</p>
-                </div>
-            </div>
             </div>
             <div class="recommended">
                 <h1>Recommended</h1>

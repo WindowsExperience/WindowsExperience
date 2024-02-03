@@ -134,6 +134,7 @@ body {
     background-color: rgba(52, 152, 219, 0.3);
     display: none;
     pointer-events: none;
+    z-index: 100;
 }
 
 /*
@@ -395,7 +396,7 @@ body {
     margin-left: 12px;
 }
 
-.controls {
+.taskbar .controls {
     display: flex;
     justify-self: flex-end;
     position: absolute;
@@ -572,10 +573,148 @@ body {
 }
 
 /*
+    Application window
+*/
+
+.window {
+    width: 60%;
+    height: 60%;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    z-index: 105;
+    overflow: hidden;
+}
+
+.window .titlebar {
+    height: 32px;
+}
+
+/*
+    Settings application
+*/
+
+.settings-app {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(24px);
+    z-index: 105;
+    position: relative;
+}
+
+.settings-app .titlebar {
+    display: flex;
+    align-items: center;
+    height: 48px !important;
+    font-size: 12px;
+    padding-left: 8px;
+}
+
+.settings-app .titlebar .ms-Icon--Back {
+    margin-right: 16px;
+}
+
+.settings-app .titlebar .icon {
+    border-radius: 5px;
+    display: grid;
+    height: 16px;
+    width: 16px;
+    place-items: center;
+    transition: all 0.1s ease-in-out;
+    padding: 8px;
+    outline: none;
+}
+
+.settings-app .titlebar .icon.active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.settings-app .titlebar .icon i {
+    font-size: 11px;
+    transition: all 0.1s ease-in-out;
+    margin-left: 16px;
+}
+
+.settings-app .titlebar .icon.unused {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.settings-app .titlebar .icon:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    outline: none;
+}
+
+.settings-app .titlebar .icon:active {
+    background-color: rgba(0, 0, 0, 0.04);
+    outline: none;
+}
+
+.settings-app .titlebar p {
+    width: 100%;
+}
+
+.settings-app .titlebar .controls {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: start;
+}
+
+.settings-app .titlebar .controls .item {
+    padding: 10px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.1s ease-in-out;
+}
+
+.settings-app .titlebar .controls .item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.settings-app .titlebar .controls .item:active {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.settings-app .titlebar .controls .item.danger:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.settings-app .titlebar .controls .item.danger:hover i {
+    color: #fff;
+}
+
+.settings-app .titlebar .controls .item.danger:active i {
+    color: #fff;
+}
+
+.settings-app .titlebar .controls .item i {
+    font-size: 10px;
+}
+
+.settings-app .body {
+    display: flex;
+    height: 100%;
+}
+
+.settings-app .sidebar {
+    width: 30%;
+}
+
+.settings-app .content {
+    width: 70%;
+}
+
+/*
     Screen size stuff
 */
 
-@media screen and (max-width: 900px), screen and (max-height: 350px) {
+@media screen and (max-width: 900px),
+screen and (max-height: 350px) {
     .overlay {
         display: flex;
     }
