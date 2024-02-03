@@ -12,6 +12,13 @@
 </head>
 
 <body>
+    <div class="overlay">
+        <div>
+            <img src="./assets/img/logo.png" draggable="false">
+            <p>Your device is unsupported</p>
+            <fluent-button appearance="accent" onclick="document.querySelector('.overlay').remove()">Proceed anyway</fluent-button>
+        </div>
+    </div>
     <div class="lockscreen">
         <div>
             <fluent-progress-ring></fluent-progress-ring>
