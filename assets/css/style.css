@@ -152,6 +152,10 @@ body {
     Taskbar
 */
 
+fluent-menu-item {
+    cursor: default !important;
+}
+
 .start {
     position: fixed;
     bottom: -200%;
