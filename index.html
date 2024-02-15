@@ -54,7 +54,7 @@
                 <div class="item">
                     <i class="ms-Icon ms-Icon--Checkbox" aria-hidden="true"></i>
                 </div>
-                <div class="item danger">
+                <div class="item danger" onclick="document.querySelector('.settings-app').classList.remove('show')">
                     <i class="ms-Icon ms-Icon--ChromeClose" aria-hidden="true"></i>
                 </div>
             </div>
@@ -80,11 +80,11 @@
             <div class="pinned">
                 <h1>Pinned</h1>
                 <div class="items">
-                    <div class="icon">
+                    <div class="icon" id="edge-tile">
                         <img src="./assets/img/icons/Edge.png" draggable="false">
                         <p>Edge</p>
                     </div>
-                    <div class="icon">
+                    <div class="icon" id="settings-tile" onclick="document.querySelector('.settings-app').classList.add('show')">
                         <img src="./assets/img/icons/Settings.png" draggable="false">
                         <p>Settings</p>
                     </div>

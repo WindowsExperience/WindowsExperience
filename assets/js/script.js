@@ -24,6 +24,11 @@ startButton.addEventListener('click', () => {
     startMenu.classList.toggle('show');
     startButton.classList.toggle('active');
 });
+document.querySelectorAll('[id$="-tile"]').forEach(function(tile) {
+    tile.addEventListener('click', function() {
+        startMenu.classList.toggle('show');
+    });
+});
 document.addEventListener('click', (event) => {
     if (!startButton.contains(event.target) && !startMenu.contains(event.target)) {
         startMenu.classList.remove('show');
@@ -125,25 +130,25 @@ window.addEventListener('load', function () {
 // Window management
 //
 windowElement.forEach(element => {
-  const titlebar = element.querySelector('.titlebar');
-  titlebar.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    offsetX = e.clientX - element.getBoundingClientRect().left;
-    offsetY = e.clientY - element.getBoundingClientRect().top;
-    activeElement = element;
-  });
+    const titlebar = element.querySelector('.titlebar');
+    titlebar.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - element.getBoundingClientRect().left;
+        offsetY = e.clientY - element.getBoundingClientRect().top;
+        activeElement = element;
+    });
 });
 document.addEventListener('mousemove', (e) => {
-  if (isDragging) {
-    const x = e.clientX - offsetX;
+    if (isDragging) {
+        const x = e.clientX - offsetX;
         const y = e.clientY - offsetY;
         const maxX = window.innerWidth - activeElement.offsetWidth;
         const maxY = window.innerHeight - activeElement.offsetHeight;
         activeElement.style.left = `${Math.max(0, Math.min(x, maxX))}px`;
         activeElement.style.top = `${Math.max(0, Math.min(y, maxY))}px`;
-  }
+    }
 });
 document.addEventListener('mouseup', () => {
-  isDragging = false;
-  activeElement = null;
+    isDragging = false;
+    activeElement = null;
 });
