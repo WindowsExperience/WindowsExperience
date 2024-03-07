@@ -89,7 +89,7 @@ body {
 
 .toast-x.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(12px);
+    transform: translateX(-50%) translateY(-20px);
     color: #1b1b1b;
 }
 
