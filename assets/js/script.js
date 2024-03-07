@@ -157,9 +157,6 @@ document.addEventListener('mouseup', () => {
 // Toast
 //
 function toast(toastMessage) {
-    if (toastVisible) {
-        return;
-    }
     toastVisible = true;
     var toast = document.createElement("div");
     toast.classList.add("toast");
