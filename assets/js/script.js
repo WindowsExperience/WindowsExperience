@@ -152,3 +152,26 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
     activeElement = null;
 });
+//
+// Toast
+//
+function toast(toastMessage) {
+    if (toastVisible) {
+        return;
+    }
+    toastVisible = true;
+    var toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.innerText = toastMessage;
+    document.body.appendChild(toast);
+    setTimeout(function () {
+        toast.classList.add("show")
+    }, 100);
+    setTimeout(function () {
+        toast.classList.remove("show");
+        setTimeout(function () {
+            document.body.removeChild(toast);
+            toastVisible = false;
+        }, 300);
+    }, 3000);
+}

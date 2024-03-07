@@ -63,6 +63,37 @@ body {
 }
 
 /*
+    Toast
+*/
+
+.toast {
+    position: fixed;
+    bottom: 72px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fefefe;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    color: #1b1b1b;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0;
+    z-index: 2000;
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out, color 0.3s ease-in-out;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(20px);
+    color: #ffffff;
+}
+
+
+/*
     Overlay
 */
 
