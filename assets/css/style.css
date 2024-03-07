@@ -66,7 +66,7 @@ body {
     Toast
 */
 
-.toast {
+.toast-x {
     position: fixed;
     bottom: 96px;
     left: 50%;
@@ -87,7 +87,7 @@ body {
     transition: opacity 0.2s ease-out, transform 0.2s ease-out, color 0.3s ease-in-out;
 }
 
-.toast.show {
+.toast-x.show {
     opacity: 1;
     transform: translateX(-50%) translateY(20px);
     color: #ffffff;
