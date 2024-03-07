@@ -84,12 +84,12 @@ body {
     user-select: none;
     opacity: 0;
     z-index: 2000;
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out, color 0.3s ease-in-out;
+    transition: opacity 0.1s ease-out, transform 0.2s ease-out, color 0.2s ease-in-out;
 }
 
 .toast-x.show {
     opacity: 1;
-    transform: translateX(-50%) translateY(20px);
+    transform: translateX(-50%) translateY(12px);
     color: #1b1b1b;
 }
 
