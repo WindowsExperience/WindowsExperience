@@ -5,6 +5,7 @@ let isSelecting = false;
 let isDragging = false;
 let startX, startY, endX, endY;
 let offsetX, offsetY, activeElement;
+var toastVisible = false;
 const selectionRectangle = document.querySelector(".selection");
 const time = document.getElementById('time');
 const date = document.getElementById('date');
