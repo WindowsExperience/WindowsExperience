@@ -158,7 +158,7 @@ document.addEventListener('mouseup', () => {
 //
 function toast(toastMessage) {
     var toast = document.createElement("div");
-    toast.classList.add("toast");
+    toast.classList.add("toast-x");
     toast.innerText = toastMessage;
     document.body.appendChild(toast);
     setTimeout(function () {
