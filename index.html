@@ -13,12 +13,9 @@
 </head>
 
 <body>
-    <!-- <div class="watermark">
-        <p>Work in progress</p>
-    </div> -->
-    <video autoplay muted id="bloom" onended="wallp()" oncontextmenu="return false;">
+    <!-- <video autoplay muted id="bloom" onended="wallp()" oncontextmenu="return false;">
         <source src="./assets/img/bloom.mp4" type="video/mp4">
-    </video>
+    </video> -->
     <div class="overlay">
         <div>
             <img src="./assets/img/logo.png" draggable="false">
@@ -173,7 +170,7 @@
         <div class="icon">
             <img src="./assets/img/icons/Store.png" draggable="false">
         </div>
-        <div class="icon">
+        <div class="icon" id="edge" onclick="edge()">
             <img src="./assets/img/icons/Edge.png" draggable="false">
         </div>
         <div class="controls">

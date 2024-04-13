@@ -5,6 +5,7 @@ let isSelecting = false;
 let isDragging = false;
 let startX, startY, endX, endY;
 let offsetX, offsetY, activeElement;
+let edges = 0;
 var toastVisible = false;
 var debugTimer;
 var debugEnabled = false;
@@ -110,6 +111,14 @@ document.addEventListener('click', (event) => {
         startSearch.value = "";
     }
 });
+function edge() {
+    edges++;
+    if (edges === 3) {
+        document.querySelector('#edge img').src = './assets/img/icons/Chrome.png';
+        document.querySelector('#edge-tile img').src = './assets/img/icons/Chrome.png';
+        document.querySelector('#edge-tile p').textContent = 'Google Chrome';
+    }
+}
 function updateDateTime() {
     const currentDateTime = new Date();
     let hours = currentDateTime.getHours();
@@ -193,9 +202,9 @@ window.addEventListener('load', function () {
         lockscreen.style.animation = 'scaleOut 0.1s ease-in-out forwards';
         setTimeout(() => {
             lockscreen.remove();
-            bloom.style.display = 'block';
-            bloom.play();
-            document.body.style.backgroundImage = "url('./assets/img/wallpaper.jpg')";
+            // bloom.style.display = 'block';
+            // bloom.play();
+            // document.body.style.backgroundImage = "url('./assets/img/wallpaper.jpg')";
         }, 100);
     }, 500);
 });

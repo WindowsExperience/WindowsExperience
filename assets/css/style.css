@@ -54,7 +54,8 @@
 }
 
 body {
-    background-image: url('../img/first.webp');
+    /* background-image: url('../img/first.webp'); */
+    background-image: url('../img/wallpaper.jpg');
     background-color: #ffffff;
     background-size: cover;
     background-position: center;
