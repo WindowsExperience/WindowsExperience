@@ -6,6 +6,8 @@ let isDragging = false;
 let startX, startY, endX, endY;
 let offsetX, offsetY, activeElement;
 var toastVisible = false;
+var debugTimer;
+var debugEnabled;
 const selectionRectangle = document.querySelector(".selection");
 const time = document.getElementById('time');
 const date = document.getElementById('date');
@@ -24,6 +26,15 @@ const windowElement = document.querySelectorAll('.window');
 startButton.addEventListener('click', () => {
     startMenu.classList.toggle('show');
     startButton.classList.toggle('active');
+});
+startButton.addEventListener("mousedown", function() {
+    debugTimer = setTimeout(function() {
+        toast("Debugging enabled")
+        debugEnabled = true;
+    }, 1000);
+});
+startButton.addEventListener("mouseup", function() {
+    clearTimeout(debugTimer);
 });
 document.querySelectorAll('[id$="-tile"]').forEach(function(tile) {
     tile.addEventListener('click', function() {
@@ -160,6 +171,9 @@ function openWindow(name) {
 }
 function closeWindow(name) {
     document.querySelector("." + name).classList.add('close');
+}
+function maxWindow(name) {
+    document.querySelector("." + name).classList.toggle('maximized');
 }
 //
 // Toast
