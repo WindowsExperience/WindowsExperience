@@ -34,19 +34,39 @@ function debug(callback) {
 startButton.addEventListener('click', () => {
     startMenu.classList.toggle('show');
     startButton.classList.toggle('active');
-    debug(function() {
+    debug(function () {
         console.log('Toggled start menu');
     });
 });
 startButton.addEventListener("mousedown", function () {
     debugTimer = setTimeout(function () {
-        if (!debugEnabled) {
-            toast('Debugging enabled');
-            debugEnabled = true;
-        }
-        debug(function() {
+        debug(function () {
             toast('Debugging is aleady enabled');
         });
+        if (!debugEnabled) {
+            toast('Debugging enabled');
+            console.log(`
+                            .oodMMMM
+                   .oodMMMMMMMMMMMMM
+       ..oodMMM  MMMMMMMMMMMMMMMMMMM
+ oodMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ 
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+ MMMMMMMMMMMMMM  MMMMMMMMMMMMMMMMMMM
+  ^^^^^^MMMMMMM  MMMMMMMMMMMMMMMMMMM
+           ^^^^  ^^MMMMMMMMMMMMMMMMM
+                          ^^^^^^MMMM
+            `);
+            debugEnabled = true;
+        }
     }, 500);
 });
 startButton.addEventListener("mouseup", function () {
@@ -67,7 +87,7 @@ document.addEventListener('click', (event) => {
 widgetsButton.addEventListener('click', () => {
     widgetsPane.classList.toggle('show');
     widgetsButton.classList.toggle('active');
-    debug(function() {
+    debug(function () {
         console.log('Toggled widgets');
     });
 });
@@ -92,9 +112,6 @@ function updateDateTime() {
     const formattedDate = `${day}/${month}/${year}`;
     time.innerText = formattedTime;
     date.innerText = formattedDate;
-    debug(function() {
-        console.log('Updated time and date');
-    });
 }
 document.addEventListener('DOMContentLoaded', () => {
     taskbar.addEventListener('contextmenu', (event) => {
@@ -190,19 +207,19 @@ function openWindow(name) {
     document.querySelector("." + name).removeAttribute('style');
     document.querySelector("." + name).classList.remove('close');
     document.querySelector("." + name).classList.add('show');
-    debug(function() {
+    debug(function () {
         console.log(`Opened ${name}`);
     });
 }
 function closeWindow(name) {
     document.querySelector("." + name).classList.add('close');
-    debug(function() {
+    debug(function () {
         console.log(`Closed ${name}`);
     });
 }
 function maxWindow(name) {
     document.querySelector("." + name).classList.toggle('maximized');
-    debug(function() {
+    debug(function () {
         console.log(`Changed mode of ${name}`);
     });
 }
