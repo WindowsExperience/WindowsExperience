@@ -174,10 +174,12 @@ setInterval(updateDateTime, 1000);
 //
 window.addEventListener('load', function () {
     var lockscreen = document.querySelector('.lockscreen');
-    lockscreen.style.animation = 'scaleOut 0.1s ease-in-out forwards';
     setTimeout(() => {
-        lockscreen.remove();
-    }, 100);
+        lockscreen.style.animation = 'scaleOut 0.1s ease-in-out forwards';
+        setTimeout(() => {
+            lockscreen.remove();
+        }, 100);
+    }, 500);
 });
 //
 // Window management
