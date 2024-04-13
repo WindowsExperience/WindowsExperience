@@ -153,6 +153,14 @@ document.addEventListener('mouseup', () => {
     isDragging = false;
     activeElement = null;
 });
+function openWindow(name) {
+    document.querySelector("." + name).removeAttribute('style');
+    document.querySelector("." + name).classList.remove('close');
+    document.querySelector("." + name).classList.add('show');
+}
+function closeWindow(name) {
+    document.querySelector("." + name).classList.add('close');
+}
 //
 // Toast
 //

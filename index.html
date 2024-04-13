@@ -20,7 +20,7 @@
         <div>
             <img src="./assets/img/logo.png" draggable="false">
             <p>Your device is unsupported</p>
-            <fluent-button appearance="accent" onclick="document.querySelector('.overlay').remove()">Proceed
+            <fluent-button appearance="accent" onclick="closeWindow('overlay')">Proceed
                 anyway</fluent-button>
         </div>
     </div>
@@ -54,7 +54,7 @@
                 <div class="item">
                     <i class="ms-Icon ms-Icon--Checkbox" aria-hidden="true"></i>
                 </div>
-                <div class="item danger" onclick="document.querySelector('.settings-app').classList.remove('show')">
+                <div class="item danger" onclick="closeWindow('settings-app')">
                     <i class="ms-Icon ms-Icon--ChromeClose" aria-hidden="true"></i>
                 </div>
             </div>
@@ -84,7 +84,7 @@
                         <img src="./assets/img/icons/Edge.png" draggable="false">
                         <p>Edge</p>
                     </div>
-                    <div class="icon" id="settings-tile" onclick="document.querySelector('.settings-app').classList.add('show')">
+                    <div class="icon" id="settings-tile" onclick="openWindow('settings-app')">
                         <img src="./assets/img/icons/Settings.png" draggable="false">
                         <p>Settings</p>
                     </div>
