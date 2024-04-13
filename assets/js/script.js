@@ -20,6 +20,7 @@ const startButton = document.getElementById('start-button');
 const startMenu = document.querySelector('.start');
 const startSearch = document.getElementById('start-search');
 const edgeButton = document.querySelector('.backtoedge');
+const designButton = document.querySelector('.design');
 const debuggingButton = document.querySelector('.debugging');
 const powerButton = document.querySelector('.power');
 const widgetsButton = document.getElementById('widgets-button');
@@ -36,6 +37,7 @@ function debug(callback) {
 function disableDebug() {
     toast('Debugging disabled');
     debuggingButton.style.display = 'none';
+    designButton.style.display = 'none';
     if (edges >= 3) {
         document.querySelector('#edge img').src = './assets/img/icons/Chrome.png';
         document.querySelector('#edge-tile img').src = './assets/img/icons/Chrome.png';
@@ -63,8 +65,10 @@ startButton.addEventListener('click', () => {
     startButton.classList.toggle('active');
     if (debugEnabled) {
         debuggingButton.style.display = 'flex';
+        designButton.style.display = 'flex';
     } else {
         debuggingButton.style.display = 'none';
+        designButton.style.display = 'none';
     }
     if (edges >= 3) {
         edgeButton.style.display = 'flex';
@@ -81,6 +85,7 @@ startButton.addEventListener("mousedown", function () {
         if (!debugEnabled) {
             toast('Debugging enabled');
             debuggingButton.style.display = 'flex';
+            designButton.style.display = 'flex';
             document.querySelector('#edge img').src = './assets/img/icons/Firefox.png';
             document.querySelector('#edge-tile img').src = './assets/img/icons/Firefox.png';
             document.querySelector('#edge-tile p').textContent = 'Firefox';
@@ -111,6 +116,12 @@ startButton.addEventListener("mousedown", function () {
 startButton.addEventListener("mouseup", function () {
     clearTimeout(debugTimer);
 });
+function designEdit() {
+    toast('Design mode enabled');
+    var style = document.createElement("style");
+    style.textContent = "* { outline: 1px dashed red; }";
+    document.head.appendChild(style);
+}
 document.querySelectorAll('[id$="-tile"]').forEach(function (tile) {
     tile.addEventListener('click', function () {
         startMenu.classList.toggle('show');
