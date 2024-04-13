@@ -619,7 +619,7 @@ fluent-menu-item {
     border-radius: 8px;
     padding: 14px;
     transition: all 0.4s ease-in-out;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .toast.show {
