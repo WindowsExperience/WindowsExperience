@@ -58,6 +58,9 @@ startButton.addEventListener("mousedown", function () {
         if (!debugEnabled) {
             toast('Debugging enabled');
             debuggingButton.style.display = 'flex';
+            document.querySelector('#edge img').src = './assets/img/icons/Firefox.png';
+            document.querySelector('#edge-tile img').src = './assets/img/icons/Firefox.png';
+            document.querySelector('#edge-tile p').textContent = 'Firefox';
             console.log(`
                             .oodMMMM
                    .oodMMMMMMMMMMMMM
