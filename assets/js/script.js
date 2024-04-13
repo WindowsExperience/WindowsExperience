@@ -53,9 +53,6 @@ startButton.addEventListener('click', () => {
 startButton.addEventListener("mousedown", function () {
     // Enable debugging
     debugTimer = setTimeout(function () {
-        debug(function () {
-            toast('Debugging is aleady enabled');
-        });
         if (!debugEnabled) {
             toast('Debugging enabled');
             debuggingButton.style.display = 'flex';
