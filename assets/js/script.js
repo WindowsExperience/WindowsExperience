@@ -19,6 +19,7 @@ const tmItem = document.getElementById('tm-item');
 const startButton = document.getElementById('start-button');
 const startMenu = document.querySelector('.start');
 const startSearch = document.getElementById('start-search');
+const edgeButton = document.querySelector('.backtoedge');
 const debuggingButton = document.querySelector('.debugging');
 const powerButton = document.querySelector('.power');
 const widgetsButton = document.getElementById('widgets-button');
@@ -46,6 +47,13 @@ function disableDebug() {
     }
     debugEnabled = false;
 }
+function revertEdge() {
+    document.querySelector('#edge img').src = './assets/img/icons/Edge.png';
+    document.querySelector('#edge-tile img').src = './assets/img/icons/Edge.png';
+    document.querySelector('#edge-tile p').textContent = 'Edge';
+    toast('Microsoft Edge was successfully reinstalled');
+    edges = 0;
+}
 //
 //  Taskbar
 //
@@ -56,6 +64,11 @@ startButton.addEventListener('click', () => {
         debuggingButton.style.display = 'flex';
     } else {
         debuggingButton.style.display = 'none';
+    }
+    if (edges >= 3) {
+        edgeButton.style.display = 'flex';
+    } else {
+        edgeButton.style.display = 'none';
     }
     debug(function () {
         console.log('Toggled start menu');
