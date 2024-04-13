@@ -17,6 +17,8 @@ const tmItem = document.getElementById('tm-item');
 const startButton = document.getElementById('start-button');
 const startMenu = document.querySelector('.start');
 const startSearch = document.getElementById('start-search');
+const debuggingButton = document.querySelector('.debugging');
+const powerButton = document.querySelector('.power');
 const widgetsButton = document.getElementById('widgets-button');
 const widgetsPane = document.querySelector('.widgets-pane');
 const windowElement = document.querySelectorAll('.window');
@@ -28,12 +30,22 @@ function debug(callback) {
         callback();
     }
 }
+function disableDebug() {
+    toast('Debugging disabled');
+    debuggingButton.style.display = 'none';
+    debugEnabled = false;
+}
 //
 //  Taskbar
 //
 startButton.addEventListener('click', () => {
     startMenu.classList.toggle('show');
     startButton.classList.toggle('active');
+    if (debugEnabled) {
+        debuggingButton.style.display = 'flex';
+    } else {
+        debuggingButton.style.display = 'none';
+    }
     debug(function () {
         console.log('Toggled start menu');
     });
@@ -46,6 +58,7 @@ startButton.addEventListener("mousedown", function () {
         });
         if (!debugEnabled) {
             toast('Debugging enabled');
+            debuggingButton.style.display = 'flex';
             console.log(`
                             .oodMMMM
                    .oodMMMMMMMMMMMMM

@@ -77,7 +77,7 @@ body {
     color: #1b1b1b;
     padding: 12px;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 6px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -356,29 +356,34 @@ fluent-menu-item {
     color: #191919;
 }
 
-.start .toolbar .power {
+.start .toolbar .controls {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.start .toolbar .item {
     order: 2;
     transition: all 0.1s ease-in-out;
-    width: 36px;
-    height: 36px;
-    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.start .toolbar .power img {
+.start .toolbar .item img {
     width: 16px;
     height: 16px;
-    border-radius: 3px;
+    border-radius: 4px;
     transition: all 0.08s ease-in-out;
 }
 
-.start .toolbar .power:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+.start .toolbar .item:hover {
+    background-color: rgba(0, 0, 0, 0.06);
 }
 
-.start .toolbar .power:active {
+.start .toolbar .item:active {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
@@ -639,7 +644,9 @@ fluent-menu-item {
     /* transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s, border-radius 0.2s; */
 }
 
-.window.close, .settings-app.close, .overlay.close {
+.window.close,
+.settings-app.close,
+.overlay.close {
     animation: scaleOut 0.1s ease-in-out forwards !important;
 }
 
