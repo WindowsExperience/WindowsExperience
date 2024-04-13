@@ -53,6 +53,7 @@ function revertEdge() {
     document.querySelector('#edge-tile p').textContent = 'Edge';
     toast('Microsoft Edge was successfully reinstalled');
     edges = 0;
+    edgeButton.style.display = 'none';
 }
 //
 //  Taskbar
