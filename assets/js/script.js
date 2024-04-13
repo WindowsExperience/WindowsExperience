@@ -35,6 +35,15 @@ function debug(callback) {
 function disableDebug() {
     toast('Debugging disabled');
     debuggingButton.style.display = 'none';
+    if (edges >= 3) {
+        document.querySelector('#edge img').src = './assets/img/icons/Chrome.png';
+        document.querySelector('#edge-tile img').src = './assets/img/icons/Chrome.png';
+        document.querySelector('#edge-tile p').textContent = 'Google Chrome';
+    } else {
+        document.querySelector('#edge img').src = './assets/img/icons/Edge.png';
+        document.querySelector('#edge-tile img').src = './assets/img/icons/Edge.png';
+        document.querySelector('#edge-tile p').textContent = 'Edge';
+    }
     debugEnabled = false;
 }
 //
