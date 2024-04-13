@@ -39,6 +39,7 @@ startButton.addEventListener('click', () => {
     });
 });
 startButton.addEventListener("mousedown", function () {
+    // Enable debugging
     debugTimer = setTimeout(function () {
         debug(function () {
             toast('Debugging is aleady enabled');
@@ -67,7 +68,7 @@ startButton.addEventListener("mousedown", function () {
             `);
             debugEnabled = true;
         }
-    }, 500);
+    }, 1000);
 });
 startButton.addEventListener("mouseup", function () {
     clearTimeout(debugTimer);
