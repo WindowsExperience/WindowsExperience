@@ -54,12 +54,42 @@
 }
 
 body {
-    background-image: url('../img/wallpaper.jpg');
+    background-image: url('../img/first.webp');
+    background-color: #ffffff;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     height: 100vh;
     font-family: 'Segoe UI Regular', sans-serif;
+}
+
+/*
+    Video background (bloom by default)
+*/
+
+#bloom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#bloom.end {
+    animation: disappear 10s ease-in-out forwards;
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        display: none;
+    }
 }
 
 /*

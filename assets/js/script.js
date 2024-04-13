@@ -8,6 +8,7 @@ let offsetX, offsetY, activeElement;
 var toastVisible = false;
 var debugTimer;
 var debugEnabled = false;
+const bloom = document.getElementById('bloom');
 const selectionRectangle = document.querySelector(".selection");
 const time = document.getElementById('time');
 const date = document.getElementById('date');
@@ -143,6 +144,9 @@ taskbarMenu.addEventListener("click", () => {
 //
 //  Desktop
 //
+function wallp() {
+    bloom.classList.add('end');
+}
 document.addEventListener('mousedown', (event) => {
     const targetElement = event.target;
     if (!targetElement || event.button !== 0) return;
@@ -189,6 +193,9 @@ window.addEventListener('load', function () {
         lockscreen.style.animation = 'scaleOut 0.1s ease-in-out forwards';
         setTimeout(() => {
             lockscreen.remove();
+            bloom.style.display = 'block';
+            bloom.play();
+            document.body.style.backgroundImage = "url('./assets/img/wallpaper.jpg')";
         }, 100);
     }, 500);
 });
