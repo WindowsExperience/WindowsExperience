@@ -845,6 +845,7 @@ fluent-menu-item {
     to {
         opacity: 0;
         scale: 0.95;
+        display: none;
     }
 }
 
