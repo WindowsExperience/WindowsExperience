@@ -85,10 +85,10 @@ startButton.addEventListener("mousedown", function () {
         if (!debugEnabled) {
             toast('Debugging enabled');
             debuggingButton.style.display = 'flex';
-            designButton.style.display = 'flex';
-            document.querySelector('#edge img').src = './assets/img/icons/Firefox.png';
-            document.querySelector('#edge-tile img').src = './assets/img/icons/Firefox.png';
-            document.querySelector('#edge-tile p').textContent = 'Firefox';
+            //designButton.style.display = 'flex';
+            //document.querySelector('#edge img').src = './assets/img/icons/Firefox.png';
+            //document.querySelector('#edge-tile img').src = './assets/img/icons/Firefox.png';
+            //document.querySelector('#edge-tile p').textContent = 'Firefox';
             console.log(`
                             .oodMMMM
                    .oodMMMMMMMMMMMMM
@@ -149,12 +149,12 @@ document.addEventListener('click', (event) => {
     }
 });
 function edge() {
-    edges++;
-    if (edges === 3) {
-        document.querySelector('#edge img').src = './assets/img/icons/Chrome.png';
-        document.querySelector('#edge-tile img').src = './assets/img/icons/Chrome.png';
-        document.querySelector('#edge-tile p').textContent = 'Google Chrome';
-    }
+    //edges++;
+    //if (edges === 3) {
+    //    document.querySelector('#edge img').src = './assets/img/icons/Chrome.png';
+    //    document.querySelector('#edge-tile img').src = './assets/img/icons/Chrome.png';
+    //    document.querySelector('#edge-tile p').textContent = 'Google Chrome';
+    //}
 }
 function updateDateTime() {
     const currentDateTime = new Date();
