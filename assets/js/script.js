@@ -71,7 +71,7 @@ startButton.addEventListener('click', () => {
         designButton.style.display = 'none';
     }
     if (edges >= 3) {
-        edgeButton.style.display = 'flex';
+        //edgeButton.style.display = 'flex';
     } else {
         edgeButton.style.display = 'none';
     }
