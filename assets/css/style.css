@@ -552,6 +552,11 @@ fluent-menu-item {
     height: 16px;
 }
 
+.control-item#panel img {
+    width: 18px;
+    height: 18px;
+}
+
 .control-item:hover {
     outline: 0.5px solid rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.05);
@@ -575,7 +580,7 @@ fluent-menu-item {
 }
 
 #ethernet {
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 #tray img {
